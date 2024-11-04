@@ -42,6 +42,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   border-radius: 25px;
+  margin-top: 10px;
 }
 
 .singleArticleBody {
@@ -58,8 +59,34 @@ html, body {
   align-self: flex-start;
   background-color: black;
   margin-left: 15px;
+  border-radius: 20px;
 }
 
 .statsText {
   color: white;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  justify-self: flex-start;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: row;
+  margin-right: 25px;
+}
+
+.trendingArticlesSection {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.trendingTopicsSection {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: flex-start;
 }

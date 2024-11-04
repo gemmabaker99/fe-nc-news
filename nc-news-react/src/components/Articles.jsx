@@ -22,7 +22,7 @@ if (isLoading === true){return <p>Loading...</p>}
     return <div className="articlesSection" >
         <h1>Articles</h1>
         <div className="articlesList"></div>
-        <p>{articles.map((article)=> {
+        {articles.map((article)=> {
             return <div key={article.article_id} className="articlesCard">
                 <h3>{article.title}</h3>
                 <p>Author: {article.author}</p>
@@ -31,7 +31,7 @@ if (isLoading === true){return <p>Loading...</p>}
                <Link to={`/articles/${article.article_id}`}> <button>Read Article</button></Link> 
             </div>
              
-        })}</p>
+        })}
     </div>
 }
 

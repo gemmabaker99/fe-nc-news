@@ -10,7 +10,7 @@ function postArticle () {
         <p>Post a New Article</p>
         <form>
             <input id="title" type="text" name="Title" />
-            <label htmlFor="title" />
+            <label htmlFor="title" name="Title" />
             <input type="text" name="Content" />
             <input type="button" value='post' onClick={postArticle} />
         </form>
