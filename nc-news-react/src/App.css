@@ -1,0 +1,65 @@
+html, body {
+  width: 100%;
+}
+
+.mainBody {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainTitle {
+  font-stretch: expanded;
+  width: 100%;
+}
+
+.headerSection {
+  background-color: aqua;
+  border-radius: 25px;
+}
+
+.articlesList {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.articlesCard {
+  background-color:lightsteelblue;
+  height: 300px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.singleArticleBody {
+  background-color:bisque;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+
+}
+
+.articleStats {
+  align-self: flex-start;
+  background-color: black;
+  margin-left: 15px;
+}
+
+.statsText {
+  color: white;
+}
