@@ -4,10 +4,16 @@ const api = axios.create({
   baseURL: "https://gemmas-news.onrender.com/api",
 });
 
-function getArticles() {
-  return api.get("/articles").then((response) => {
-    return response.data.articles;
-  });
+function getArticles(sortBy = "created_at") {
+  return api
+    .get("/articles", {
+      params: {
+        sort_by: sortBy,
+      },
+    })
+    .then((response) => {
+      return response.data.articles;
+    });
 }
 
 function getArticleById(article_id) {

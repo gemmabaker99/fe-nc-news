@@ -3,7 +3,10 @@ import Nav from "./Nav"
 function Header () {
  return (
     <div className="headerSection">
- <h1 className="mainTitle">Gemma's News</h1>
+      <div className="titleSection">
+      <img className="logo" src="/Assets/logo-transparent.png" alt="Gemma News Logo"/>
+      <h1 className="mainTitle">Gemma's News</h1>
+      </div>
  < Nav />
     </div>
  )
