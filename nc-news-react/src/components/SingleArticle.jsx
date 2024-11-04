@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { getArticleById } from "../axios"
 
 function SingleArticle () {
@@ -19,13 +19,18 @@ function SingleArticle () {
 
 
     return (
-        <div className="singleArticleBody">
+<div className="singleArticleBody">
             <h1>{article.title}</h1>
-            <div className="articleStats">
-            <p className="statsText">Written by: {article.author}</p>
-            <p className="statsText">Topic: {article.topic}</p>
-            <p className="statsText">Current Votes: {article.votes}</p>
-            </div>
+    <div className="articleStats">
+        <p className="statsText">Written by: {article.author}</p>
+        <p className="statsText">Topic: {article.topic}</p>
+        <p className="statsText">Current Votes: {article.votes}</p>
+        <div className="commentsBox">
+            <p>Comments: {article.comment_count}</p>
+            <Link to={`/articles/${article.article_id}/comments`}> <button>View Comments</button> </Link>
+        </div>
+
+    </div>
             <img src={article.article_img_url}></img>
             <p>{article.body}</p>
         </div>

@@ -90,3 +90,24 @@ html, body {
   row-gap: 10px;
   align-items: flex-start;
 }
+
+.commentsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.commentsCard {
+  margin-right: 10px;
+  background-color: whitesmoke;
+
+}
+
+.commentsBox {
+  color: white;
+  background-color: darkblue;
+  border: 10px solid black;
+}
