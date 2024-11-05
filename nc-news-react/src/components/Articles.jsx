@@ -26,7 +26,7 @@ if (isLoading === true){return <p>Loading...</p>}
                 <h3>{article.title}</h3>
                 <p>Author: {article.author}</p>
                <Link to={`/articles/${article.article_id}/comments`}> <button>Comments: {article.comment_count}</button> </Link>
-                <p>Topic: {article.topic}</p>
+               <Link to={`/topics/${article.topic}`}> <p className="statsText">Topic: {article.topic}</p> </Link>
                <Link to={`/articles/${article.article_id}`}> <button>Read Article</button></Link> 
             </div>
              
