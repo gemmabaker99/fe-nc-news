@@ -111,3 +111,7 @@ html, body {
   background-color: darkblue;
   border: 10px solid black;
 }
+
+.loggedInAs {
+  align-self: flex-end;
+}

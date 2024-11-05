@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getCommentsByArticleId, postAComment } from "../axios"
+import { deleteAComment, getCommentsByArticleId, postAComment } from "../axios"
 
 function Comments ({user}) {
 
@@ -32,6 +32,13 @@ function Comments ({user}) {
         })
     }
 
+    function deleteComment (comment_id) {
+        deleteAComment(comment_id).then(()=> {
+            setMessage("comment deleted successfully")
+        })
+
+    }
+
 
 if(isLoading){return <p>Loading...</p>}
 
@@ -43,6 +50,7 @@ if(isLoading){return <p>Loading...</p>}
             return <div key={comment.comment_id} className="commentsCard">
                     <p>Author: {comment.author}</p>
                     <p>Comment: {comment.body}</p>
+                    {comment.author === user? <button onClick={()=> {deleteComment(comment.comment_id)}}>Delete</button> : <></>}
                  </div>
   })}
         </div>
