@@ -50,6 +50,12 @@ function deleteAComment(comment_id) {
   });
 }
 
+function getAllTopics() {
+  return api.get("/topics").then((response) => {
+    return response.data.topics;
+  });
+}
+
 export {
   getArticles,
   getArticleById,
@@ -57,4 +63,5 @@ export {
   increaseArticleVotes,
   postAComment,
   deleteAComment,
+  getAllTopics,
 };

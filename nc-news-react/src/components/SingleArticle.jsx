@@ -31,7 +31,7 @@ function SingleArticle () {
             <h1>{article.title}</h1>
     <div className="articleStats">
         <p className="statsText">Written by: {article.author}</p>
-        <p className="statsText">Topic: {article.topic}</p>
+        <Link to={`/topics/${article.topic}`}> <p className="statsText">Topic: {article.topic}</p> </Link>
         <div className="votesBox">
             <p className="statsText">Current Votes: {article.votes}</p>
             <button onClick={handleVotes}>Vote</button>

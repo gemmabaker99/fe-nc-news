@@ -7,6 +7,7 @@ import Articles from './components/Articles'
 import SingleArticle from './components/SingleArticle'
 import Post from './components/Post'
 import Comments from './components/Comments'
+import TopicPage from './components/TopicPage'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
     <Route path='/articles/:article_id' element={<SingleArticle />} />
     <Route path='/post' element={<Post />} />
     <Route path='/articles/:article_id/comments' element={<Comments user={user}/>} /> 
+    <Route path='/topics/:topic_name' element={<TopicPage />} />
      </Routes>
      </div>
   )

@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react"
-import { getArticles } from "../axios"
+import { getAllTopics, getArticles } from "../axios"
 import { Link } from "react-router-dom"
 
 function Home () {
   const [articles, setArticles] = useState([])
+  const [topics, setTopics] = useState([])
   const [loading, setLoading] = useState(true)
   const [err,setErr] = useState(false)
 
     useEffect(()=> {
         getArticles('votes').then((data)=> {
             setArticles(data)
+            })
+            getAllTopics().then((response)=> {
+                setTopics(response)
             setLoading(false)
         }).catch((err)=> {
             setErr(true)
         })
     }, [])
-
     if(loading){return <p>Loading...</p>}
-
     return (
     <>
         <div className="trendingArticlesSection">
@@ -29,6 +31,9 @@ function Home () {
     </div>
     <div className="trendingTopicsSection">
         <h2>Trending Topics</h2>
+        <Link to={`/topics/${topics[0].slug}`}> <button>{topics[0].slug}</button></Link>
+        <Link to={`/topics/${topics[1].slug}`}> <button>{topics[1].slug}</button></Link>
+
     </div>
     </>
     )
