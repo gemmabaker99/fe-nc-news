@@ -19,7 +19,6 @@ function Comments () {
         })
     })
 
-    console.log(comments)
 
 if(isLoading){return <p>Loading...</p>}
 

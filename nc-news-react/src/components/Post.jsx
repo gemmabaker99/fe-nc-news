@@ -2,7 +2,6 @@ function Post () {
 
 
 function postArticle () {
-    console.log("article to post")
 }
 
     return (
