@@ -8,14 +8,15 @@ import SingleArticle from './components/SingleArticle'
 import Post from './components/Post'
 import Comments from './components/Comments'
 import TopicPage from './components/TopicPage'
+import Login from './components/Login'
 
 function App() {
 
-  const [user, setUser] = useState('tickle122')
+  const [user, setUser] = useState('')
 
   return (
     <div className='mainBody'>
-     < Header user={user} />
+     < Header user={user} setUser={setUser} />
      <Routes>
     <Route path='/' element={<Home />} />
     <Route path='/articles' element={<Articles />} />
@@ -23,6 +24,7 @@ function App() {
     <Route path='/post' element={<Post />} />
     <Route path='/articles/:article_id/comments' element={<Comments user={user}/>} /> 
     <Route path='/topics/:topic_name' element={<TopicPage />} />
+    <Route path='/login' element={<Login user={user} setUser={setUser}/>} />
      </Routes>
      </div>
   )

@@ -56,6 +56,12 @@ function getAllTopics() {
   });
 }
 
+function getAllUsers() {
+  return api.get("/users").then((response) => {
+    return response.data.users;
+  });
+}
+
 export {
   getArticles,
   getArticleById,
@@ -64,4 +70,5 @@ export {
   postAComment,
   deleteAComment,
   getAllTopics,
+  getAllUsers,
 };

@@ -84,11 +84,44 @@ html, body {
   row-gap: 10px;
 }
 
+.trendingArticlesSection button {
+  background-color:steelblue;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+.trendingArticlesSection button:hover {
+  background-color: #04AA6D; 
+  color: white;
+}
+
 .trendingTopicsSection {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   align-items: flex-start;
+}
+
+.trendingTopicsSection button {
+  background-color:steelblue;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition-duration: 0.4s;
+
+}
+
+.trendingTopicsSection button:hover {
+  background-color: #04AA6D; 
+  color: white;
 }
 
 .commentsList {
@@ -114,4 +147,14 @@ html, body {
 
 .loggedInAs {
   align-self: flex-end;
+}
+
+.userAvatar {
+  height: 100px;
+  width: 100px;
+}
+
+.loginHeader {
+  display: flex;
+  flex-direction: row;
 }
