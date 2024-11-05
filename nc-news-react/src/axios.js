@@ -36,9 +36,18 @@ function increaseArticleVotes(article_id) {
     });
 }
 
+function postAComment(article_id, commentBody) {
+  return api
+    .post(`articles/${article_id}/comments`, commentBody)
+    .then((response) => {
+      return response.data.comment;
+    });
+}
+
 export {
   getArticles,
   getArticleById,
   getCommentsByArticleId,
   increaseArticleVotes,
+  postAComment,
 };

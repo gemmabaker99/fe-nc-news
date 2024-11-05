@@ -10,6 +10,8 @@ import Comments from './components/Comments'
 
 function App() {
 
+  const [user, setUser] = useState('tickle122')
+
   return (
     <div className='mainBody'>
      < Header />
@@ -18,7 +20,7 @@ function App() {
     <Route path='/articles' element={<Articles />} />
     <Route path='/articles/:article_id' element={<SingleArticle />} />
     <Route path='/post' element={<Post />} />
-    <Route path='/articles/:article_id/comments' element={<Comments />} /> 
+    <Route path='/articles/:article_id/comments' element={<Comments user={user}/>} /> 
      </Routes>
      </div>
   )
