@@ -17,7 +17,6 @@ function Home () {
     }, [])
 
     if(loading){return <p>Loading...</p>}
-    console.log(articles)
 
     return (
     <>
