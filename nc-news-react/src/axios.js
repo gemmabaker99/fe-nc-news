@@ -28,4 +28,17 @@ function getCommentsByArticleId(article_id) {
   });
 }
 
-export { getArticles, getArticleById, getCommentsByArticleId };
+function increaseArticleVotes(article_id) {
+  return api
+    .patch(`articles/${article_id}`, { inc_votes: 1 })
+    .then((response) => {
+      return response.data.article;
+    });
+}
+
+export {
+  getArticles,
+  getArticleById,
+  getCommentsByArticleId,
+  increaseArticleVotes,
+};

@@ -15,7 +15,6 @@ function Articles () {
         }).catch((err)=> setisErr(true) )
     }, [])
 
-    console.log(articles)
 
 if (isLoading === true){return <p>Loading...</p>}
 
