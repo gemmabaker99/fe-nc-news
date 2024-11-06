@@ -6,7 +6,7 @@ const api = axios.create({
 
 function getArticles(
   sortBy = "created_at",
-  order,
+  order = "desc",
   page = "1",
   numPerPage = "10"
 ) {

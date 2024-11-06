@@ -18,7 +18,7 @@ function TopicPage () {
         getAllTopics().then((response)=> {
             setLoading(false)
             setAllTopics(response)
-            getArticles().then((response)=> {
+            getArticles(undefined, undefined, "1", "1000").then((response)=> {
             setAllArticles(response)
             })
             
