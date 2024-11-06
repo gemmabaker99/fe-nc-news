@@ -23,7 +23,7 @@ function Articles () {
 if (isLoading === true){return <p>Loading...</p>}
 
     return <div className="articlesSection" >
-    <h1>Articles</h1>
+    <h1 id='articleHeader'>Articles</h1>
     <div className="articleSorter">
         <label htmlFor="sortBy">Sort By:</label>
 

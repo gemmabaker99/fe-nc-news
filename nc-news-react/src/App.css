@@ -1,9 +1,27 @@
+@font-face {
+  font-family: "Trends";
+  src: url("./Assets/Trends.ttf");
+}
+
+@font-face {
+  font-family: "News";
+  src: url("./Assets/Front Page News.otf");
+}
+
+@font-face {
+  font-family: "chunky";
+  src: url("./Assets/bold.ttf");
+}
+
+button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 html, body {
-  width: 100%;
+  width: 100vw
 }
 
 .mainBody {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,16 +29,29 @@ html, body {
 }
 
 .mainTitle {
-  font-stretch: expanded;
   width: 100%;
+  font-family: News;
+  align-self: center;
+  justify-self: center;
+}
+
+#singleArticleHeader {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 .headerSection {
   background-color: aqua;
   border-radius: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
 .articlesList {
+ justify-self: flex-start;
+  width: 100%;
   margin-top: 50px;
   display: flex;
   flex-direction: row;
@@ -29,9 +60,11 @@ html, body {
   column-gap: 10px;
   row-gap: 10px;
   align-self: center;
-  align-items: center;
-  justify-content: center;
  
+}
+
+#articleHeader {
+  font-family: Trends;
 }
 
 .articlesCard {
@@ -43,6 +76,8 @@ html, body {
   align-items: center;
   border-radius: 25px;
   margin-top: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
 }
 
 .singleArticleBody {
@@ -82,6 +117,7 @@ html, body {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  font-family: Trends;
 }
 
 .trendingArticlesSection button {
@@ -93,6 +129,7 @@ html, body {
   text-decoration: none;
   font-size: 16px;
   transition-duration: 0.4s;
+ 
 }
 
 .trendingArticlesSection button:hover {
@@ -105,6 +142,7 @@ html, body {
   flex-direction: column;
   row-gap: 10px;
   align-items: flex-start;
+  font-family: Trends;
 }
 
 .trendingTopicsSection button {
@@ -124,6 +162,14 @@ html, body {
   color: white;
 }
 
+.commentBody {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
 .commentsList {
   display: flex;
   flex-direction: row;
@@ -136,7 +182,14 @@ html, body {
 .commentsCard {
   margin-right: 10px;
   background-color: whitesmoke;
+  height: 200px;
+  width: 200px;
 
+}
+
+.postCommentBox {
+  justify-self: flex-start;
+  align-self: flex-start;
 }
 
 .commentsBox {

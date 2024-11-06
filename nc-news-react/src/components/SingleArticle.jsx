@@ -37,7 +37,7 @@ function SingleArticle () {
 
     return (
 <div className="singleArticleBody">
-            <h1>{article.title}</h1>
+            <h1 id="singleArticleHeader">{article.title}</h1>
     <div className="articleStats">
         <p className="statsText">Written by: {article.author}</p>
         <Link to={`/topics/${article.topic}`}> <p className="statsText">Topic: {article.topic}</p> </Link>

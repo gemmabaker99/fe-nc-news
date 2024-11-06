@@ -45,8 +45,8 @@ function Comments ({user}) {
 if(isLoading){return <p>Loading...</p>}
 
     return (
-        <>
-        
+        <div className="commentBody">
+        {comments.length === 0 ? <p>No Comments to Show, Post one Below!</p> : <></>}
         <div className="commentsList">
         {comments.map((comment)=> {
             return <div key={comment.comment_id} className="commentsCard">
@@ -64,7 +64,7 @@ if(isLoading){return <p>Loading...</p>}
             </form>
             <p>{message}</p>
              </div>
-        </>
+        </div>
     
     
     )
