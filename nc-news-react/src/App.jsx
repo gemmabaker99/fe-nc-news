@@ -9,6 +9,7 @@ import Post from './components/Post'
 import Comments from './components/Comments'
 import TopicPage from './components/TopicPage'
 import Login from './components/Login'
+import NotFound from './components/NotFound'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
     <Route path='/articles/:article_id/comments' element={<Comments user={user}/>} /> 
     <Route path='/topics/:topic_name' element={<TopicPage />} />
     <Route path='/login' element={<Login user={user} setUser={setUser}/>} />
+    <Route path="*" element={<NotFound />} />
      </Routes>
      </div>
   )

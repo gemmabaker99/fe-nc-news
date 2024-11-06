@@ -8,15 +8,24 @@ function SingleArticle () {
     const [article, setArticle] = useState({})
     const [loading, setLoading] = useState(true)
     const [votes, setVotes] = useState('')
+    const [message, setMessage] = useState("")
 
     useEffect(()=> {
         getArticleById(article_id).then((articleData)=> {
             setArticle(articleData)
             setLoading(false)
+        }).catch((err)=> {
+            console.log(err, "error log")
+            setLoading(false)
+            setMessage("article not found")
         })
     },[article_id, votes])
 
     if(loading === true){return <p>Loading...</p>}
+    if(message) {return <div>
+        <p>{message}</p>
+        <Link to="/">Go back to Home</Link>
+        </div>}
 
 
     function handleVotes() {
