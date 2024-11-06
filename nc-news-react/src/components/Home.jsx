@@ -6,15 +6,16 @@ function Home () {
   const [articles, setArticles] = useState([])
   const [topics, setTopics] = useState([])
   const [loading, setLoading] = useState(true)
-  const [err,setErr] = useState(false)
+  const [err, setErr] = useState(false)
 
     useEffect(()=> {
         getArticles('votes').then((data)=> {
             setArticles(data)
+            setLoading(false)
+
             })
             getAllTopics().then((response)=> {
                 setTopics(response)
-            setLoading(false)
         }).catch((err)=> {
             setErr(true)
         })

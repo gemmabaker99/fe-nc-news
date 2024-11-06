@@ -4,11 +4,19 @@ const api = axios.create({
   baseURL: "https://gemmas-news.onrender.com/api",
 });
 
-function getArticles(sortBy = "created_at") {
+function getArticles(
+  sortBy = "created_at",
+  order,
+  page = "1",
+  numPerPage = "10"
+) {
   return api
     .get("/articles", {
       params: {
         sort_by: sortBy,
+        order: order,
+        p: page,
+        limit: numPerPage,
       },
     })
     .then((response) => {
