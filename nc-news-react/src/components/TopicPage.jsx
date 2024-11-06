@@ -32,7 +32,10 @@ function TopicPage () {
     })
 
     if(loading){return <p>Loading...</p>}
-    if(matchingTopic.length === 0) {return <p>Topic does not exist</p>}
+    if(matchingTopic.length === 0) {return <div>
+        <p>Topic does not exist</p>
+        <Link to="/">Go back to Home</Link>
+        </div> }
 
     return (
         <div>

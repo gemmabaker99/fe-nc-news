@@ -24,13 +24,15 @@ function Comments ({user}) {
     function postComment(event) {
         event.preventDefault()
         setIsLoading(true)
+        if(user === ''){setMessage("Please Login to Post a Comment")}
+        else{
         postAComment(article_id, {username: user, body: commentToPost}).then((response)=> {
             setIsLoading(false)
             setMessage('Posted Successfully')
         }).catch((err)=> {
             setMessage("posting Failed, Please Try again")
         })
-    }
+        }}
 
     function deleteComment (comment_id) {
         deleteAComment(comment_id).then(()=> {
@@ -55,10 +57,10 @@ if(isLoading){return <p>Loading...</p>}
   })}
         </div>
         <div className="postCommentBox">
-             <form>
+             <form onSubmit={postComment}>
              <label htmlFor="body">Comment:</label>
-            <input onChange={(event)=> {setCommentToPost(event.target.value)}}type="text" id="body" name="body"/>
-            <button onClick={postComment}>Post</button>
+            <input onChange={(event)=> {setCommentToPost(event.target.value)}}type="text" id="body" name="body" required/>
+            <button type="submit">Post</button>
             </form>
             <p>{message}</p>
              </div>
