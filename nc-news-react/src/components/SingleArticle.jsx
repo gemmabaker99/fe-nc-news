@@ -38,7 +38,10 @@ function SingleArticle () {
     return (
 <div className="singleArticleBody">
             <h1 id="singleArticleHeader">{article.title}</h1>
-    <div className="articleStats">
+  
+            <img id="singleArticleImg" src={article.article_img_url}></img>
+            <p>{article.body}</p>
+            <div className="articleStats">
         <p className="statsText">Written by: {article.author}</p>
         <Link to={`/topics/${article.topic}`}> <p className="statsText">Topic: {article.topic}</p> </Link>
         <div className="votesBox">
@@ -51,9 +54,7 @@ function SingleArticle () {
         </div>
 
     </div>
-            <img src={article.article_img_url}></img>
-            <p>{article.body}</p>
-        </div>
+</div>
     )
 
 }

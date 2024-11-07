@@ -35,6 +35,35 @@ html, body {
   justify-self: center;
 }
 
+.navButtons {
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.navButtons button {
+  background-color:white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.navButtons button:hover {
+  background-color: blueviolet; 
+  color: white;
+}
+
 #singleArticleHeader {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
@@ -49,6 +78,10 @@ html, body {
   align-content: center;
 }
 
+#signOut {
+  margin-left: 25px;
+}
+
 .articlesList {
  justify-self: flex-start;
   width: 100%;
@@ -60,11 +93,13 @@ html, body {
   column-gap: 10px;
   row-gap: 10px;
   align-self: center;
+  margin-left: 25px;
  
 }
 
 #articleHeader {
   font-family: Trends;
+  margin-left: 25px;
 }
 
 .articlesCard {
@@ -81,24 +116,43 @@ html, body {
 }
 
 .singleArticleBody {
-  background-color:bisque;
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color:white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 25px;
+  width: 100vw;
 
 }
 
+#singleArticleImg {
+  width: 50%;
+}
+
 .articleStats {
-  align-self: flex-start;
+  align-self: center;
   background-color: black;
   margin-left: 15px;
   border-radius: 20px;
+  width: 400px;
+  align-content: center;
+  justify-content: center;
+}
+
+.articleStats button {
+  align-self: center;
+  justify-self: center;
+  align-content: center;
+  margin-left: 100px;
 }
 
 .statsText {
   color: white;
+  justify-self: center;
+
 }
 
 .logo {
@@ -118,10 +172,16 @@ html, body {
   flex-direction: column;
   row-gap: 10px;
   font-family: Trends;
+  background-color:steelblue;
+  width: 100vw;
+}
+
+.trendingArticlesSection h2 {
+  margin-left: 25px;
 }
 
 .trendingArticlesSection button {
-  background-color:steelblue;
+  background-color:white;
   border: none;
   color: black;
   padding: 15px 32px;
@@ -129,6 +189,8 @@ html, body {
   text-decoration: none;
   font-size: 16px;
   transition-duration: 0.4s;
+  margin-left: 25px;
+  margin-bottom: 20px;
  
 }
 
@@ -143,6 +205,12 @@ html, body {
   row-gap: 10px;
   align-items: flex-start;
   font-family: Trends;
+  background-color:ghostwhite
+}
+
+.trendingTopicsSection h2 {
+  margin-left: 25px;
+
 }
 
 .trendingTopicsSection button {
@@ -154,6 +222,8 @@ html, body {
   text-decoration: none;
   font-size: 16px;
   transition-duration: 0.4s;
+  margin-left: 25px;
+  margin-bottom: 20px;
 
 }
 
@@ -182,8 +252,10 @@ html, body {
 .commentsCard {
   margin-right: 10px;
   background-color: whitesmoke;
-  height: 200px;
-  width: 200px;
+  display: inline-block;
+  height: fit-content;
+  width: 400px;
+  padding: 20px;
 
 }
 
@@ -193,9 +265,13 @@ html, body {
 }
 
 .commentsBox {
-  color: white;
-  background-color: darkblue;
+  color:  black;
+  background-color:white;
   border: 10px solid black;
+}
+
+.commentsBox p {
+  margin-left: 20px;
 }
 
 .loggedInAs {
@@ -215,4 +291,20 @@ html, body {
 .notFound { 
 text-align: center;
 margin-top:'50px' ;
+}
+
+.manageArticleCard {
+  background-color:whitesmoke;
+  border-radius: 25px;
+}
+
+.manageArticleCard p {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.manageArticleCard button {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }

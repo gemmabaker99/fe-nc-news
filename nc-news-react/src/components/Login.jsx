@@ -28,7 +28,7 @@ function Login ({user, setUser}) {
             <p>{indUser.username}</p>
             </button>
         })}
-        <p>Sign in Success! Welcome {user}</p>
+        {user !== '' ? <p>Sign in Success! Welcome {user}</p> : <></>}
     </div>
      )
 }

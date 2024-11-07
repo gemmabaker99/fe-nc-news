@@ -43,7 +43,6 @@ function TopicPage () {
             <p>Description: {matchingTopic[0].description}</p>
             <p>{message}</p>
             {allArticles.map((article)=> {
-                console.log(article.topic)
                 if(article.topic === matchingTopic[0].slug){
                     return <Link to={`/articles/${article.article_id}`}> <p>{article.title}</p> </Link>
                 }

@@ -70,6 +70,18 @@ function getAllUsers() {
   });
 }
 
+function postAnArticle(article) {
+  return api.post("/articles", article).then((response) => {
+    return response;
+  });
+}
+
+function deleteAnArticle(article_id) {
+  return api.delete(`/articles/${article_id}`).then((response) => {
+    return response;
+  });
+}
+
 export {
   getArticles,
   getArticleById,
@@ -79,4 +91,6 @@ export {
   deleteAComment,
   getAllTopics,
   getAllUsers,
+  postAnArticle,
+  deleteAnArticle,
 };

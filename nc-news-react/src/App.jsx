@@ -22,7 +22,7 @@ function App() {
     <Route path='/' element={<Home />} />
     <Route path='/articles' element={<Articles />} />
     <Route path='/articles/:article_id' element={<SingleArticle />} />
-    <Route path='/post' element={<Post />} />
+    <Route path='/post' element={<Post user={user}/>} />
     <Route path='/articles/:article_id/comments' element={<Comments user={user}/>} /> 
     <Route path='/topics/:topic_name' element={<TopicPage />} />
     <Route path='/login' element={<Login user={user} setUser={setUser}/>} />

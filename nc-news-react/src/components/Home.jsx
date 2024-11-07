@@ -9,17 +9,17 @@ function Home () {
   const [err, setErr] = useState(false)
 
     useEffect(()=> {
-        getArticles('votes').then((data)=> {
-            setArticles(data)
+        Promise.all([getArticles('votes'), getAllTopics() ])
+        .then(([articlesData, topicData])=> {
+            setArticles(articlesData)
+            setTopics(topicData)
             setLoading(false)
-
-            })
-            getAllTopics().then((response)=> {
-                setTopics(response)
         }).catch((err)=> {
+            setLoading(false)
             setErr(true)
-        })
-    }, [])
+        })}
+    , [])
+
     if(loading){return <p>Loading...</p>}
     return (
     <div>

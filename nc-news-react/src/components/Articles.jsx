@@ -41,7 +41,7 @@ if (isLoading === true){return <p>Loading...</p>}
 
 
         </div>
-        <div className="articlesList"></div>
+        <div className="articlesList">
         {articles.map((article)=> {
             return <div key={article.article_id} className="articlesCard">
                 <h3>{article.title}</h3>
@@ -53,6 +53,7 @@ if (isLoading === true){return <p>Loading...</p>}
             </div>
              
         })}
+        </div>
         <button onClick={()=> {setPage('1'), window.scrollTo({ top: 0, behavior: 'smooth' })}}>Page 1</button>
          <button onClick={()=> {setPage('2'), window.scrollTo({ top: 0, behavior: 'smooth' })}}>Page 2</button>
          <label htmlFor="numPerPage">Results Per Page:</label>
@@ -63,6 +64,7 @@ if (isLoading === true){return <p>Loading...</p>}
                 <option  value="30">30</option>
             </select>
     </div>
+    
 }
 
 
