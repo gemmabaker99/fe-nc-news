@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getAllTopics, getArticles } from "../axios"
 import { Link } from "react-router-dom"
+import Spinner from "react-bootstrap/esm/Spinner"
 
 function Home () {
   const [articles, setArticles] = useState([])
@@ -20,7 +21,11 @@ function Home () {
         })}
     , [])
 
-    if(loading){return <p>Loading...</p>}
+    if(loading){return (
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      )}
     return (
     <div>
         <div className="trendingArticlesSection">

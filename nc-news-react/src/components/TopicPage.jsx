@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getAllTopics, getArticles } from "../axios"
 import { Link, useParams } from "react-router-dom"
 import { all } from "axios"
+import Spinner from "react-bootstrap/esm/Spinner"
 
 
 
@@ -31,7 +32,11 @@ function TopicPage () {
         return topic.slug === topic_name
     })
 
-    if(loading){return <p>Loading...</p>}
+    if(loading){return (
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      )}
     if(matchingTopic.length === 0) {return <div>
         <p>Topic does not exist</p>
         <Link to="/">Go back to Home</Link>

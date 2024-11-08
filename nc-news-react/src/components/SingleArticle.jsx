@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { getArticleById, increaseArticleVotes } from "../axios"
+import Spinner from "react-bootstrap/esm/Spinner"
 
 function SingleArticle () {
 
@@ -21,7 +22,11 @@ function SingleArticle () {
         })
     },[article_id, votes])
 
-    if(loading === true){return <p>Loading...</p>}
+    if(loading === true){return (
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      )}
     if(message) {return <div>
         <p>{message}</p>
         <Link to="/">Go back to Home</Link>

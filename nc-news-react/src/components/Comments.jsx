@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { deleteAComment, getCommentsByArticleId, postAComment } from "../axios"
+import Spinner from "react-bootstrap/esm/Spinner"
 
 function Comments ({user}) {
 
@@ -42,10 +43,15 @@ function Comments ({user}) {
     }
 
 
-if(isLoading){return <p>Loading...</p>}
+if(isLoading){return (
+    <Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </Spinner>
+  )}
 
     return (
         <div className="commentBody">
+           <Link to={`/articles/${article_id}`}><button>Back to Article</button></Link> 
         {comments.length === 0 ? <p>No Comments to Show, Post one Below!</p> : <></>}
         <div className="commentsList">
         {comments.map((comment)=> {

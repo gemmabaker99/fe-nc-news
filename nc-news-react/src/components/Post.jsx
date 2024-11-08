@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { deleteAnArticle, getAllTopics, getArticles, postAnArticle } from "../axios"
 import { Link } from "react-router-dom"
+import Spinner from "react-bootstrap/esm/Spinner"
 
 function Post ({user}) {
 
@@ -18,7 +19,6 @@ function Post ({user}) {
         .then(([topicsData, articlesData])=> {
             setTopicsList(topicsData)
             setLoading(false)
-            console.log(articlesData, "articlesdata")
             const filteredArticles = articlesData.filter((article)=> {
                 return article.author === user
             })
@@ -30,11 +30,17 @@ function postArticle (event) {
     event.preventDefault()
     console.log({author: user, title: articleTitle, body: articleContent, topic: articleTopic})
     setLoading(true)
-    if(user === ''){setMessage("Please Login to Post an article")}
+    if(articleTopic === ''){setLoading(false), setMessage('Please select a topic')}
+    else if(articleContent === ''){setLoading(false), setMessage("Content cannot be empty")}
+    else if(articleTitle === ''){setLoading(false), setMessage('Please fill in title field')}
+    else if(user === ''){setLoading(false), setMessage("Please Login to Post an article")}
     else {
     postAnArticle({author: user, title: articleTitle, body: articleContent, topic: articleTopic}).then((newArticle)=> {
         setLoading(false)
         setMessage('Posted Successfully')
+        setArticleTitle('')
+        setArticleContent('')
+        setArticleTopic('')
         setUsersArticles((prevArticles) => [newArticle.data.article, ...prevArticles])
     }).catch((err)=> {
         setLoading(false)
@@ -55,20 +61,25 @@ function deleteArticle (article_id) {
         setMessage(err.message)
     })
 }
-    if(loading){return <p>Loading...</p>}
+    if(loading){return (
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      )}
 
     return (
         <div>
-        <p>Post a New Article</p>
+        <h2 className="postHeader">Post a New Article</h2>
         <form onSubmit={postArticle} className="postForm">
             <label htmlFor="title" name="Title">Title</label>
-            <input onChange={(event) => {setArticleTitle(event.target.value)}} id="title" type="text" name="Title" />
+            <input onChange={(event) => {setArticleTitle(event.target.value)}} id="title" type="text" name="Title" required/>
             
             <label htmlFor="Content" name="Content">Content</label>
-            <textarea onChange={(event) => {setArticleContent(event.target.value)}} name="Content" />
+            <textarea onChange={(event) => {setArticleContent(event.target.value)}} name="Content" required/>
 
             <label htmlFor="topic">Choose a topic:</label>
             <select onChange={(event) => {setArticleTopic(event.target.value)}}  name="topic" id="topic">
+                <option>Select topic:</option>
         {topicsList.map((topic)=> {
             return <option key={topic.slug} value={topic.slug}>{topic.slug}</option>
         })}
@@ -78,7 +89,7 @@ function deleteArticle (article_id) {
         </form>
         <p>{message}</p>
         <div className="Your Articles">
-            <h3>Your Articles:</h3>
+            {user !== '' ? <h3>Your Articles:</h3> : <p>Please login to post or see your articles</p>}
             {usersArticles.map((article)=> {
                 return <div className="manageArticleCard" key={article.article_id}>
                     <Link to={`/articles/${article.article_id}`}> <p>{article.title}</p></Link> 

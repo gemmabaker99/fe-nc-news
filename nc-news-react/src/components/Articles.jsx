@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getArticles } from "../axios"
 import { Link } from "react-router-dom"
+import Spinner from "react-bootstrap/esm/Spinner"
 
 function Articles () {
 
@@ -20,7 +21,11 @@ function Articles () {
     }, [sortBy, order, page, numPerPage])
 
 
-if (isLoading === true){return <p>Loading...</p>}
+if (isLoading === true){return (
+    <Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </Spinner>
+  )}
 
     return <div className="articlesSection" >
     <h1 id='articleHeader'>Articles</h1>

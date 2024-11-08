@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from './components/Header'
 import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
@@ -10,6 +11,7 @@ import Comments from './components/Comments'
 import TopicPage from './components/TopicPage'
 import Login from './components/Login'
 import NotFound from './components/NotFound'
+import Topics from './components/Topics'
 
 function App() {
 
@@ -26,6 +28,7 @@ function App() {
     <Route path='/articles/:article_id/comments' element={<Comments user={user}/>} /> 
     <Route path='/topics/:topic_name' element={<TopicPage />} />
     <Route path='/login' element={<Login user={user} setUser={setUser}/>} />
+    <Route path='/topics' element={<Topics />} />
     <Route path="*" element={<NotFound />} />
      </Routes>
      </div>

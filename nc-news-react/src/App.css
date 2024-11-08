@@ -13,6 +13,8 @@
   src: url("./Assets/bold.ttf");
 }
 
+/* All */
+
 button {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -28,11 +30,34 @@ html, body {
   align-items: center;
 }
 
+/* Header and nav */
+
+.titleSection {
+  display: flex;
+  flex-direction: row;
+  margin-right: 25px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  justify-self: flex-start;
+}
+
 .mainTitle {
   width: 100%;
   font-family: News;
   align-self: center;
   justify-self: center;
+}
+
+.loggedInAs {
+  align-self: flex-end;
+}
+
+.loginButton {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .navButtons {
@@ -82,6 +107,8 @@ html, body {
   margin-left: 25px;
 }
 
+/* all articles page */
+
 .articlesList {
  justify-self: flex-start;
   width: 100%;
@@ -114,6 +141,20 @@ html, body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
 }
+
+.articlesCard h3 {
+  margin-top: 10px;
+}
+
+.articlesCard Link {
+  margin-bottom: 10px;
+}
+
+.articleSorter{
+  margin-left: 10px;
+}
+
+/* Single article page */
 
 .singleArticleBody {
   margin-right: 20px;
@@ -155,17 +196,8 @@ html, body {
 
 }
 
-.logo {
-  width: 100px;
-  height: 100px;
-  justify-self: flex-start;
-}
+/* Homepage */
 
-.titleSection {
-  display: flex;
-  flex-direction: row;
-  margin-right: 25px;
-}
 
 .trendingArticlesSection {
   display: flex;
@@ -178,6 +210,7 @@ html, body {
 
 .trendingArticlesSection h2 {
   margin-left: 25px;
+  margin-top: 25px;
 }
 
 .trendingArticlesSection button {
@@ -210,6 +243,7 @@ html, body {
 
 .trendingTopicsSection h2 {
   margin-left: 25px;
+  margin-top: 25px;
 
 }
 
@@ -231,6 +265,9 @@ html, body {
   background-color: #04AA6D; 
   color: white;
 }
+
+/* Comments page */
+
 
 .commentBody {
   display: flex;
@@ -274,9 +311,7 @@ html, body {
   margin-left: 20px;
 }
 
-.loggedInAs {
-  align-self: flex-end;
-}
+/* Login Page */
 
 .userAvatar {
   height: 100px;
@@ -288,10 +323,15 @@ html, body {
   flex-direction: row;
 }
 
+/* Not found page */
+
 .notFound { 
 text-align: center;
 margin-top:'50px' ;
 }
+
+/* Post/manage Page */
+
 
 .manageArticleCard {
   background-color:whitesmoke;
@@ -307,4 +347,43 @@ margin-top:'50px' ;
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
+}
+
+.postHeader {
+  font-family: Trends;
+}
+
+/* Topics Page */
+
+
+.topicPage {
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  width: 100vw;
+}
+
+.topicPage h2 {
+  margin-left: 50px;
+  align-self: flex-start;
+  font-family: Trends;
+}
+
+.topicPageList {
+  margin-left: 100px;
+  justify-self: flex-start;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-self: center;
+
 }
